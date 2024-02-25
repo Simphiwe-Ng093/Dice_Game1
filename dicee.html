@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Dicee</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <div class="container">
+      <button type="button" onClick="window.location.reload()">
+        Roll Dice 
+     </button>
+      <h1>Refresh Me</h1>
+ 
+      <div class="dice player1">
+        <p style="color: #FFBE98">Player 1</p>
+        <p class ="score1" style="color: #FFBE98"> </p>
+        <img class="img1" src="" />
+      </div>
+
+      <div class="dice player2">
+        <p style="color:  #FEECE2">Player 2</p>
+        <p class ="score2" style="color:  #FEECE2"> </p>
+        <img class="img2" src="" />
+      </div>
+
+    </div>
+
+    <footer>www 🎲 SimDev 🎲 com</footer>
+
+    <script>
+           let play1Var = `./images/dice${Math.floor(Math.random() * 6) + 1}.png`;
+           let play2Var = `./images/dice${Math.floor(Math.random() * 6) + 1}.png`;
+            let score1 = 1;
+            let score2 = 2;
+           if(play1Var > play2Var)
+               document.querySelector("h1").innerHTML = "Player 1 wins";
+           else if(play1Var < play2Var)
+               document.querySelector("h1").innerHTML = "Player 2 wins";
+           else
+             document.querySelector("h1").innerHTML = "It's a draw";
+
+           document.querySelector(".img1").setAttribute("src",play1Var);
+           document.querySelector(".img2").setAttribute("src",play2Var);
+           document.querySelector(".score1").innerHTML = "Score " + score1;
+           document.querySelector(".score2").innerHTML = "Score " + score2;
+
+    </script>
+  </body>
+</html>
